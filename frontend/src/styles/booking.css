@@ -1,0 +1,460 @@
+/* ── Booking Page Layout ──────────────────────────────────────────── */
+.booking-page {
+  padding: var(--sp-8) 0 var(--sp-16);
+  min-height: 80vh;
+}
+
+/* Steps progress bar */
+.booking-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: var(--sp-10);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5) var(--sp-6);
+}
+.booking-step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  position: relative;
+}
+.booking-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(50% - 20px);
+  height: 2px;
+  background: var(--border);
+  left: calc(50% + 20px);
+}
+.booking-step--done:not(:last-child)::after { background: var(--amber); }
+
+.booking-step__num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border: 2px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: all var(--dur) var(--ease);
+}
+.booking-step--active .booking-step__num {
+  border-color: var(--amber);
+  background: var(--amber);
+  color: var(--ink);
+}
+.booking-step--done .booking-step__num {
+  border-color: var(--amber);
+  background: var(--amber-pale);
+  color: var(--amber-dark);
+}
+.booking-step__label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.booking-step--active .booking-step__label { color: var(--text-primary); }
+.booking-step--done .booking-step__label { color: var(--amber-dark); }
+
+/* ── Booking Grid ────────────────────────────────────────────────── */
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+/* Summary sidebar */
+.booking-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  position: sticky;
+  top: 82px;
+}
+.booking-summary__head {
+  background: var(--ink-2);
+  padding: var(--sp-5) var(--sp-6);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.booking-summary__head-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--amber);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.booking-summary__head-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+.booking-summary__body { padding: var(--sp-5) var(--sp-6); }
+.booking-summary__route {
+  text-align: center;
+  margin-bottom: var(--sp-5);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px dashed var(--border);
+}
+.booking-summary__route-from,
+.booking-summary__route-to {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.booking-summary__route-arrow {
+  font-size: 1.25rem;
+  color: var(--amber);
+  margin: var(--sp-2) 0;
+}
+.booking-summary__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 0.875rem;
+}
+.booking-summary__row-label { color: var(--text-muted); }
+.booking-summary__row-value { font-weight: 600; color: var(--text-primary); }
+.booking-summary__total {
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 2px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.booking-summary__total-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.booking-summary__total-amount {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--amber-dark);
+}
+
+/* Passenger form */
+.passenger-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.passenger-section__head {
+  padding: var(--sp-5) var(--sp-6);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.passenger-form {
+  padding: var(--sp-6);
+}
+.passenger-block {
+  padding: var(--sp-5);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  margin-bottom: var(--sp-4);
+  position: relative;
+  background: var(--surface-2);
+}
+.passenger-block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-4);
+}
+.passenger-block__label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.passenger-block__num {
+  width: 24px;
+  height: 24px;
+  background: var(--amber);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.passenger-block__grid {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  gap: var(--sp-4);
+}
+
+/* ── Payment Section ──────────────────────────────────────────────── */
+.payment-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.payment-methods {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.payment-method {
+  padding: var(--sp-4) var(--sp-5);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  transition: all var(--dur) var(--ease);
+}
+.payment-method:hover { border-color: var(--amber); background: var(--amber-pale); }
+.payment-method.selected { border-color: var(--amber); background: var(--amber-pale); }
+.payment-method__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-sm);
+  background: var(--surface-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+.payment-method__name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+.payment-method__desc { font-size: 0.8125rem; color: var(--text-muted); }
+.payment-radio {
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.payment-radio.checked {
+  border-color: var(--amber);
+  background: var(--amber);
+}
+.payment-radio.checked::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* ── Ticket / Confirmation ────────────────────────────────────────── */
+.ticket {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.ticket__header {
+  background: var(--ink-2);
+  padding: var(--sp-6) var(--sp-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+.ticket__logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #fff;
+}
+.ticket__logo span { color: var(--amber); }
+.ticket__pnr-block { text-align: right; }
+.ticket__pnr-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,.55);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.ticket__pnr {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--amber);
+  letter-spacing: 0.06em;
+}
+.ticket__status-bar {
+  padding: var(--sp-4) var(--sp-8);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--green-bg);
+}
+.ticket__status-bar.confirmed { background: var(--green-bg); }
+.ticket__status-bar.waitlisted { background: var(--orange-bg); }
+.ticket__status-bar.cancelled { background: var(--red-bg); }
+.ticket__status-icon { font-size: 1.25rem; }
+.ticket__status-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+.ticket__body { padding: var(--sp-6) var(--sp-8); }
+.ticket__journey {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-6);
+  padding-bottom: var(--sp-6);
+  border-bottom: 2px dashed var(--border);
+}
+.ticket__station { flex: 1; }
+.ticket__station-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.ticket__station-name { font-size: 0.8125rem; color: var(--text-muted); margin-top: 4px; }
+.ticket__station-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--amber-dark);
+  margin-top: var(--sp-2);
+}
+.ticket__middle { text-align: center; flex-shrink: 0; }
+.ticket__train-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+.ticket__train-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin: var(--sp-1) 0;
+}
+.ticket__arrow {
+  font-size: 1.5rem;
+  color: var(--amber);
+  margin: var(--sp-2) 0;
+}
+.ticket__duration { font-size: 0.8125rem; color: var(--text-muted); }
+.ticket__meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+.ticket__meta-item {}
+.ticket__meta-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.ticket__meta-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+.ticket__passengers {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  margin-bottom: var(--sp-6);
+}
+.ticket__passengers-head {
+  background: var(--surface-2);
+  padding: 10px var(--sp-4);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: var(--sp-4);
+}
+.ticket__passengers-head span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-family: 'Space Grotesk', sans-serif;
+}
+.ticket__passenger-row {
+  padding: 11px var(--sp-4);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: var(--sp-4);
+  border-top: 1px solid var(--border);
+}
+.ticket__passenger-row span { font-size: 0.9rem; color: var(--text-primary); }
+.ticket__passenger-seat {
+  font-family: 'JetBrains Mono', monospace !important;
+  color: var(--amber-dark) !important;
+  font-weight: 500;
+}
+.ticket__footer {
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  padding: var(--sp-4) var(--sp-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+.ticket__fare {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.ticket__fare span { color: var(--amber-dark); }
+
+@media (max-width: 768px) {
+  .booking-grid { grid-template-columns: 1fr; }
+  .ticket__meta { grid-template-columns: repeat(2, 1fr); }
+  .passenger-block__grid { grid-template-columns: 1fr; }
+  .booking-steps { overflow-x: auto; }
+}
