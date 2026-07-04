@@ -7,7 +7,7 @@ export default function DisclaimerModal() {
 
   useEffect(() => {
     // Show once per browser session
-    if (!sessionStorage.getItem('railyatra_disclaimer_accepted')) {
+    if (!sessionStorage.getItem('railKaro_disclaimer_accepted')) {
       // Small delay so the page renders first
       const t = setTimeout(() => setVisible(true), 300);
       return () => clearTimeout(t);
@@ -20,7 +20,7 @@ export default function DisclaimerModal() {
       setTimeout(() => setShake(false), 600);
       return;
     }
-    sessionStorage.setItem('railyatra_disclaimer_accepted', '1');
+    sessionStorage.setItem('railKaro_disclaimer_accepted', '1');
     setVisible(false);
   };
 
@@ -114,7 +114,7 @@ export default function DisclaimerModal() {
                 color: '#1a1a2e',
                 marginBottom: '8px',
               }}>
-                🚂 RailYatra — Student / Developer Project
+                🚂 RailKaro — Student / Developer Project
               </p>
               <p style={{
                 fontSize: '0.9rem',
@@ -237,7 +237,7 @@ export default function DisclaimerModal() {
                 letterSpacing: '0.01em',
               }}
             >
-              {checked ? '✅ I Understand — Enter RailYatra' : '☑️ Please check the box above first'}
+              {checked ? '✅ I Understand — Enter RailKaro' : '☑️ Please check the box above first'}
             </button>
 
             {/* Footer note */}

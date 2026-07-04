@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div>
-            <div className="footer__brand-logo">Rail<span>Yatra</span></div>
+            <div className="footer__brand-logo">Rail<span>Karo</span></div>
             <p className="footer__brand-desc">
               India's trusted online train ticketing platform. Book, manage, and track your journeys with ease.
             </p>
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer__bottom">
-          <span className="footer__copy">© {new Date().getFullYear()} RailYatra. Built for demonstration.</span>
+          <span className="footer__copy">© {new Date().getFullYear()} RailKaro. Built for demonstration.</span>
           <span className="footer__copy">🚂 Powered by Node.js · React · MongoDB</span>
         </div>
       </div>

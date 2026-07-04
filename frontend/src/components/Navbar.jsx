@@ -24,7 +24,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="navbar__logo">
           <div className="navbar__logo-icon">🚂</div>
-          <span className="navbar__logo-text">Rail<span>Yatra</span></span>
+          <span className="navbar__logo-text">Rail<span>Karo</span></span>
         </Link>
 
         {/* Centre links */}

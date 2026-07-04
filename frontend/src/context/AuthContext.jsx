@@ -7,21 +7,21 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const stored = localStorage.getItem('railyatra_user');
+    const stored = localStorage.getItem('railKaro_user');
     if (stored) {
-      try { setUser(JSON.parse(stored)); } catch { localStorage.removeItem('railyatra_user'); }
+      try { setUser(JSON.parse(stored)); } catch { localStorage.removeItem('railKaro_user'); }
     }
     setLoading(false);
   }, []);
 
   const login = useCallback((userData) => {
     setUser(userData);
-    localStorage.setItem('railyatra_user', JSON.stringify(userData));
+    localStorage.setItem('railKaro_user', JSON.stringify(userData));
   }, []);
 
   const logout = useCallback(() => {
     setUser(null);
-    localStorage.removeItem('railyatra_user');
+    localStorage.removeItem('railKaro_user');
   }, []);
 
   return (

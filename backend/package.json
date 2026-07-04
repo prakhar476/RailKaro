@@ -1,7 +1,7 @@
 {
   "name": "railway-reservation-backend",
   "version": "1.0.0",
-  "description": "REST API for the RailYatra Railway Reservation System (Node.js, Express, MongoDB)",
+  "description": "REST API for the RailKaro Railway Reservation System (Node.js, Express, MongoDB)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

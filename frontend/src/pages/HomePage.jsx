@@ -126,7 +126,7 @@ export default function HomePage() {
       <section className="features">
         <div className="container">
           <div style={{ textAlign: 'center' }}>
-            <div className="section-eyebrow">Why RailYatra</div>
+            <div className="section-eyebrow">Why RailKaro</div>
             <h2 className="section-title">Everything You Need</h2>
             <p className="section-desc" style={{ margin: '0 auto' }}>From booking to boarding, we've made the entire rail travel experience seamless.</p>
           </div>

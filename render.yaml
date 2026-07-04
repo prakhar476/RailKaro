@@ -1,0 +1,22 @@
+# ── Render.com deployment config ──────────────────────────────────────────────
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: railyatra-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false          # ← you paste this manually in Render dashboard
+      - key: JWT_SECRET
+        generateValue: true  # ← Render auto-generates a secure random value
+      - key: JWT_EXPIRE
+        value: 7d
+      - key: CLIENT_ORIGIN
+        sync: false          # ← paste your Vercel frontend URL here

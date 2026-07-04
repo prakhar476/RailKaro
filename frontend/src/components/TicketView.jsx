@@ -14,7 +14,7 @@ export default function TicketView({ booking }) {
     <div className="ticket fade-up">
       {/* Header */}
       <div className="ticket__header">
-        <div className="ticket__logo">Rail<span>Yatra</span></div>
+        <div className="ticket__logo">Rail<span>Karo</span></div>
         <div className="ticket__pnr-block">
           <div className="ticket__pnr-label">PNR Number</div>
           <div className="ticket__pnr">{booking.pnr}</div>

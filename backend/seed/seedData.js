@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Station = require('../models/Station');
 const Train = require('../models/Train');
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/railyatra';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/railKaro';
 
 const stations = [
   { code: 'NDLS', name: 'New Delhi', city: 'New Delhi', state: 'Delhi' },

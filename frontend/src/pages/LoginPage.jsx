@@ -45,7 +45,7 @@ export default function LoginPage() {
           <div className="auth-card__head">
             <Link to="/" className="auth-card__logo">
               <div className="auth-card__logo-icon">🚂</div>
-              <span className="auth-card__logo-text">Rail<span>Yatra</span></span>
+              <span className="auth-card__logo-text">Rail<span>Karo</span></span>
             </Link>
             <h2 className="auth-card__title">Welcome Back</h2>
             <p className="auth-card__sub">Sign in to manage your bookings</p>
